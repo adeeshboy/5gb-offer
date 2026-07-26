@@ -63,6 +63,25 @@
             color: #ffaa00;
         }
 
+        /* Bonus Pop-up Animation & Style */
+        .bonus-popup {
+            background: linear-gradient(135deg, #ffaa00, #ff4500);
+            color: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-size: 15px;
+            font-weight: bold;
+            box-shadow: 0 0 20px rgba(255, 170, 0, 0.5);
+            border: 2px solid #fff;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
         p { color: #aaaaaa; font-size: 14px; margin-bottom: 20px; line-height: 1.5; }
         input, select, button { 
             width: 100%; padding: 14px; margin: 10px 0; border-radius: 6px; border: none; outline: none; box-sizing: border-box; font-size: 15px;
@@ -73,7 +92,7 @@
             background: linear-gradient(90deg, #00ffcc, #00b38f); color: #000000; font-weight: bold; cursor: pointer; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px;
         }
         button:hover { box-shadow: 0 0 20px rgba(0, 255, 204, 0.4); transform: translateY(-2px); }
-        .share-btn { background: linear-gradient(90deg, #25D366, #128C7E); color: white; }
+        .share-btn { background: linear-gradient(90deg, #25D366, #128C7E); color: white; margin-top: 10px; }
         .share-btn:hover { box-shadow: 0 0 20px rgba(37, 211, 102, 0.4); }
         
         /* Spin Wheel Styles */
@@ -83,10 +102,9 @@
             background: conic-gradient(#00ffcc 0deg 90deg, #1e1e1e 90deg 180deg, #00b38f 180deg 270deg, #121212 270deg 360deg);
             border: 4px solid #333;
             box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
-            transition: transform 8s cubic-bezier(0.17, 0.67, 0.12, 0.99); /* කරකැවෙන කාලය තත්පර 8ක් දක්වා වැඩි කරන ලදි */
+            transition: transform 8s cubic-bezier(0.17, 0.67, 0.12, 0.99);
             overflow: hidden;
         }
-        /* Wheel Text Position */
         .wheel-text {
             position: absolute; width: 110px; height: 110px; display: flex; justify-content: center; align-items: center;
             font-weight: bold; font-size: 16px; color: #ffffff; text-shadow: 1px 1px 4px #000; box-sizing: border-box;
@@ -195,6 +213,11 @@
             <h2>තහවුරු කිරීම සාර්ථකයි! ✅</h2>
             <p>ඔබේ අංකය අපගේ පද්ධතියේ තහවුරු විය. Data ලබාගැනීම සඳහා, පහත බොත්තම ඔබා මෙය WhatsApp හි යහළුවන් 10 දෙනෙකුට Share කරන්න.</p>
             
+            <!-- NEW: Bonus Pop-up Box -->
+            <div class="bonus-popup">
+                🎁 විශේෂ බෝනස්: ඔබ Share කරන Link එකෙන් යාලුවෙක් ආවොත්, එක් අයෙකුට 200MB බැගින් ඔබට තවත් අමතර Data ලැබෙනවා! 🚀
+            </div>
+
             <!-- Adsterra Native Banner -->
             <div class="ad-container">
                 <script async="async" data-cfasync="false" src="https://pl30549019.effectivecpmnetwork.com/3158d37df4021041d7b4c2707d9b5cd7/invoke.js"></script>
@@ -240,10 +263,11 @@
     <script>
         let shareCount = 0;
         const requiredShares = 10;
-        const smartLink = "https://www.effectivecpmnetwork.com/ebfb93ub76?key=c1de43a7a5580709d97592bf80a7d3b1";
+        
+        // Smart Link
+        const smartLink = "https://www.effectivecpmnetwork.com/csj694rb4?key=5bdeb90762ea328521c9c09cd8871f63";
 
         function spinWheel() {
-            // Trigger Adsterra Smart Link
             window.open(smartLink, "_blank");
             
             let wheel = document.getElementById('wheel');
@@ -252,10 +276,8 @@
             spinBtn.disabled = true;
             spinBtn.style.opacity = "0.7";
             
-            // රෝදය අංශක 3555 ක් කරකවයි (වැඩි කාලයක් කැරකී 5GB එකට පැමිණ නතර වේ)
             wheel.style.transform = "rotate(3555deg)";
             
-            // තත්පර 8ක් රැඳී සිට දෙවන පිටුවට යාම
             setTimeout(() => {
                 document.getElementById('step1').style.display = "none";
                 document.getElementById('step2').style.display = "block";
@@ -270,7 +292,6 @@
                 document.getElementById('step2').style.display = "none";
                 document.getElementById('step3').style.display = "block";
                 
-                // Trigger Smart Link when clicking Verify
                 window.open(smartLink, "_blank");
             } else {
                 alert("කරුණාකර නිවැරදි ජාලය සහ දුරකථන අංකය ඇතුළත් කරන්න.");
@@ -278,10 +299,9 @@
         }
 
         function shareOnWhatsApp() {
-            // Trigger Smart Link when clicking Share
             window.open(smartLink, "_blank");
 
-            // WhatsApp Message - (අලුත් Short Link එක මෙහි අඩංගු කර ඇත)
+            // WhatsApp Message 
             let shareMessage = encodeURIComponent("🌕 ඇසල පෝය නිමිත්තෙන් 5GB Data දන්සල! දැන්ම ඔයාගේ නම්බර් එක දීලා 5GB අරගන්න. ඕනෑම ජාලයකට වලංගුයි! 👉 https://l1nq.com/tm8115s");
             let whatsappUrl = `https://api.whatsapp.com/send?text=${shareMessage}`;
             
