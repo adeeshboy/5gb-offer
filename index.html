@@ -83,7 +83,7 @@
             background: conic-gradient(#00ffcc 0deg 90deg, #1e1e1e 90deg 180deg, #00b38f 180deg 270deg, #121212 270deg 360deg);
             border: 4px solid #333;
             box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
-            transition: transform 4.5s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+            transition: transform 8s cubic-bezier(0.17, 0.67, 0.12, 0.99); /* කරකැවෙන කාලය තත්පර 8ක් දක්වා වැඩි කරන ලදි */
             overflow: hidden;
         }
         /* Wheel Text Position */
@@ -91,10 +91,10 @@
             position: absolute; width: 110px; height: 110px; display: flex; justify-content: center; align-items: center;
             font-weight: bold; font-size: 16px; color: #ffffff; text-shadow: 1px 1px 4px #000; box-sizing: border-box;
         }
-        .text1 { top: 0; right: 0; transform: rotate(45deg); color: #000; text-shadow: none; } /* 5GB - Black text for better visibility on bright green */
-        .text2 { bottom: 0; right: 0; transform: rotate(135deg); } /* Try Again */
-        .text3 { bottom: 0; left: 0; transform: rotate(225deg); color: #000; text-shadow: none; } /* 1GB */
-        .text4 { top: 0; left: 0; transform: rotate(315deg); } /* 10GB */
+        .text1 { top: 0; right: 0; transform: rotate(45deg); color: #000; text-shadow: none; } 
+        .text2 { bottom: 0; right: 0; transform: rotate(135deg); } 
+        .text3 { bottom: 0; left: 0; transform: rotate(225deg); color: #000; text-shadow: none; } 
+        .text4 { top: 0; left: 0; transform: rotate(315deg); } 
 
         .pointer {
             position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
@@ -252,13 +252,14 @@
             spinBtn.disabled = true;
             spinBtn.style.opacity = "0.7";
             
-            // රෝදය අංශක 2115 ක් කරකවයි (හරියටම 5GB එකට පැමිණ නතර වේ)
-            wheel.style.transform = "rotate(2115deg)";
+            // රෝදය අංශක 3555 ක් කරකවයි (වැඩි කාලයක් කැරකී 5GB එකට පැමිණ නතර වේ)
+            wheel.style.transform = "rotate(3555deg)";
             
+            // තත්පර 8ක් රැඳී සිට දෙවන පිටුවට යාම
             setTimeout(() => {
                 document.getElementById('step1').style.display = "none";
                 document.getElementById('step2').style.display = "block";
-            }, 4500);
+            }, 8000);
         }
 
         function goToStep3() {
@@ -280,8 +281,8 @@
             // Trigger Smart Link when clicking Share
             window.open(smartLink, "_blank");
 
-            // WhatsApp Message
-            let shareMessage = encodeURIComponent("🌕 ඇසල පෝය නිමිත්තෙන් 5GB Data දන්සල! දැන්ම ඔයාගේ නම්බර් එක දීලා 5GB අරගන්න. ඕනෑම ජාලයකට වලංගුයි! 👉 https://adeeshboy.github.io/5gb-offer/");
+            // WhatsApp Message - (අලුත් Short Link එක මෙහි අඩංගු කර ඇත)
+            let shareMessage = encodeURIComponent("🌕 ඇසල පෝය නිමිත්තෙන් 5GB Data දන්සල! දැන්ම ඔයාගේ නම්බර් එක දීලා 5GB අරගන්න. ඕනෑම ජාලයකට වලංගුයි! 👉 https://l1nq.com/tm8115s");
             let whatsappUrl = `https://api.whatsapp.com/send?text=${shareMessage}`;
             
             setTimeout(() => {
