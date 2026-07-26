@@ -39,8 +39,30 @@
         }
         h2 { color: #ffffff; margin-bottom: 5px; font-size: 24px; }
         .trust-badge {
-            color: #00ffcc; font-size: 12px; font-weight: bold; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; gap: 5px;
+            color: #00ffcc; font-size: 12px; font-weight: bold; margin-bottom: 15px; display: flex; align-items: center; justify-content: center; gap: 5px;
         }
+
+        /* Ad Warning Notice */
+        .ad-notice {
+            background: rgba(255, 170, 0, 0.1);
+            border: 1px solid #ffaa00;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            color: #ffcc00;
+            font-size: 14px;
+            line-height: 1.5;
+            box-shadow: 0 0 15px rgba(255, 170, 0, 0.15);
+            text-align: left;
+        }
+        .ad-notice span {
+            display: block;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #ffaa00;
+        }
+
         p { color: #aaaaaa; font-size: 14px; margin-bottom: 20px; line-height: 1.5; }
         input, select, button { 
             width: 100%; padding: 14px; margin: 10px 0; border-radius: 6px; border: none; outline: none; box-sizing: border-box; font-size: 15px;
@@ -57,12 +79,23 @@
         /* Spin Wheel Styles */
         .wheel-box { position: relative; width: 220px; height: 220px; margin: 20px auto; }
         .wheel {
-            width: 100%; height: 100%; border-radius: 50%;
+            position: relative; width: 100%; height: 100%; border-radius: 50%;
             background: conic-gradient(#00ffcc 0deg 90deg, #1e1e1e 90deg 180deg, #00b38f 180deg 270deg, #121212 270deg 360deg);
             border: 4px solid #333;
             box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
-            transition: transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+            transition: transform 4.5s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+            overflow: hidden;
         }
+        /* Wheel Text Position */
+        .wheel-text {
+            position: absolute; width: 110px; height: 110px; display: flex; justify-content: center; align-items: center;
+            font-weight: bold; font-size: 16px; color: #ffffff; text-shadow: 1px 1px 4px #000; box-sizing: border-box;
+        }
+        .text1 { top: 0; right: 0; transform: rotate(45deg); color: #000; text-shadow: none; } /* 5GB - Black text for better visibility on bright green */
+        .text2 { bottom: 0; right: 0; transform: rotate(135deg); } /* Try Again */
+        .text3 { bottom: 0; left: 0; transform: rotate(225deg); color: #000; text-shadow: none; } /* 1GB */
+        .text4 { top: 0; left: 0; transform: rotate(315deg); } /* 10GB */
+
         .pointer {
             position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
             width: 0; height: 0; border-left: 15px solid transparent; border-right: 15px solid transparent; border-top: 25px solid #ff0055; z-index: 10;
@@ -86,21 +119,32 @@
 
     <div class="container">
         
+        <!-- Warning Notice Section -->
+        <div class="ad-notice">
+            <span>⚠️ විශේෂ අවධානයට:</span>
+            මෙම වෙබ් අඩවිය තුළ දැන්වීම් (Ads) අන්තර්ගත වන බැවින් ඔබ අතින් වෙනත් පිටුවකට (Page) ගියහොත්, කරුණාකර ඔබගේ දුරකථනයේ <b>Back (ආපසු) බොත්තම ඔබා</b> නැවත උත්සාහ කරන්න.
+        </div>
+
         <!-- Step 1: Spin to Win -->
         <div id="step1">
             <h2>ඇසල පෝය දන්සල 🌕</h2>
             <div class="trust-badge">🔒 100% Secure & Verified</div>
-            <p>ඔබේ 5GB Data ත්‍යාගය ලබාගැනීමට රෝදය කරකවන්න (Spin the Wheel).</p>
+            <p>ඔබේ 5GB Data ත්‍යාගය ලබාගැනීමට රෝදය කරකවන්න.</p>
             
             <div class="wheel-box">
                 <div class="pointer"></div>
-                <div class="wheel" id="wheel"></div>
+                <div class="wheel" id="wheel">
+                    <div class="wheel-text text1">5GB</div>
+                    <div class="wheel-text text2">Try Again</div>
+                    <div class="wheel-text text3">1GB</div>
+                    <div class="wheel-text text4">10GB</div>
+                </div>
                 <div class="center-dot"></div>
             </div>
             
             <button id="spinBtn" onclick="spinWheel()">SPIN NOW 🎁</button>
 
-            <!-- Adsterra Banner 300x250 (New Ad) -->
+            <!-- Adsterra Banner 300x250 -->
             <div class="ad-container" style="margin-top: 25px;">
                 <script>
                   atOptions = {
@@ -118,7 +162,7 @@
         <!-- Step 2: Form -->
         <div id="step2">
             <h2 style="color: #00ffcc;">සුබපැතුම්! 🎉</h2>
-            <p>ඔබ 5GB Data ත්‍යාගය දිනාගෙන ඇත. එය සක්‍රිය කරගැනීම සඳහා ඔබගේ ජාලය සහ දුරකථන අංකය ඇතුළත් කරන්න.</p>
+            <p>ඔබ <b>5GB Data</b> ත්‍යාගය දිනාගෙන ඇත. එය සක්‍රිය කරගැනීම සඳහා ඔබගේ ජාලය සහ දුරකථන අංකය ඇතුළත් කරන්න.</p>
             
             <!-- Adsterra Banner 320x50 -->
             <div class="ad-container">
@@ -179,7 +223,7 @@
         </div>
     </div>
 
-    <!-- Adsterra Banner 160x600 (Bottom Ad) -->
+    <!-- Adsterra Banner 160x600 -->
     <div class="ad-container">
         <script>
           atOptions = {
@@ -208,10 +252,9 @@
             spinBtn.disabled = true;
             spinBtn.style.opacity = "0.7";
             
-            // Rotate wheel (5 full circles + 45 degrees)
-            wheel.style.transform = "rotate(1845deg)";
+            // රෝදය අංශක 2115 ක් කරකවයි (හරියටම 5GB එකට පැමිණ නතර වේ)
+            wheel.style.transform = "rotate(2115deg)";
             
-            // Wait 4.5 seconds for animation to finish, then go to Step 2
             setTimeout(() => {
                 document.getElementById('step1').style.display = "none";
                 document.getElementById('step2').style.display = "block";
@@ -237,7 +280,7 @@
             // Trigger Smart Link when clicking Share
             window.open(smartLink, "_blank");
 
-            // WhatsApp Message - (Update link if needed)
+            // WhatsApp Message
             let shareMessage = encodeURIComponent("🌕 ඇසල පෝය නිමිත්තෙන් 5GB Data දන්සල! දැන්ම ඔයාගේ නම්බර් එක දීලා 5GB අරගන්න. ඕනෑම ජාලයකට වලංගුයි! 👉 https://adeeshboy.github.io/5gb-offer/");
             let whatsappUrl = `https://api.whatsapp.com/send?text=${shareMessage}`;
             
