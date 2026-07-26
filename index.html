@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ඇසල පෝය 5GB දන්සල - Verified</title>
+    
+    <!-- Adsterra Popunder Ad -->
+    <script src="https://pl30549018.effectivecpmnetwork.com/1c/41/3b/1c413bcfceb6d95b7785bc863ce97de2.js"></script>
+    
+    <!-- Adsterra Social Bar Ad -->
+    <script src="https://pl30542815.effectivecpmnetwork.com/c1/79/6e/c1796e9e5bc89d1cf03ca68246b68022.js"></script>
+
     <style>
         /* Premium Cyber Theme Styles */
         body { 
@@ -12,8 +19,9 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
             text-align: center; 
             margin: 0; 
-            padding: 20px; 
+            padding: 15px; 
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
@@ -26,117 +34,108 @@
             border-radius: 12px; 
             box-shadow: 0 0 25px rgba(0, 255, 204, 0.15); 
             border: 1px solid rgba(0, 255, 204, 0.3); 
+            margin-bottom: 20px;
+            box-sizing: border-box;
         }
-        h2 { 
-            color: #ffffff; 
-            margin-bottom: 5px;
-            font-size: 24px;
-        }
+        h2 { color: #ffffff; margin-bottom: 5px; font-size: 24px; }
         .trust-badge {
-            color: #00ffcc;
-            font-size: 12px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
+            color: #00ffcc; font-size: 12px; font-weight: bold; margin-bottom: 20px; display: flex; align-items: center; justify-content: center; gap: 5px;
         }
-        p { 
-            color: #aaaaaa; 
-            font-size: 14px; 
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
+        p { color: #aaaaaa; font-size: 14px; margin-bottom: 20px; line-height: 1.5; }
         input, select, button { 
-            width: 100%; 
-            padding: 14px; 
-            margin: 10px 0; 
-            border-radius: 6px; 
-            border: none; 
-            outline: none; 
-            box-sizing: border-box; 
-            font-size: 15px;
+            width: 100%; padding: 14px; margin: 10px 0; border-radius: 6px; border: none; outline: none; box-sizing: border-box; font-size: 15px;
         }
-        input, select { 
-            background: #1e1e1e; 
-            color: #ffffff; 
-            border: 1px solid #333; 
-            transition: 0.3s;
-        }
-        input:focus, select:focus {
-            border-color: #00ffcc;
-            box-shadow: 0 0 10px rgba(0, 255, 204, 0.2);
-        }
+        input, select { background: #1e1e1e; color: #ffffff; border: 1px solid #333; transition: 0.3s; }
+        input:focus, select:focus { border-color: #00ffcc; box-shadow: 0 0 10px rgba(0, 255, 204, 0.2); }
         button { 
-            background: linear-gradient(90deg, #00ffcc, #00b38f); 
-            color: #000000; 
-            font-weight: bold; 
-            cursor: pointer; 
-            transition: 0.3s; 
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            background: linear-gradient(90deg, #00ffcc, #00b38f); color: #000000; font-weight: bold; cursor: pointer; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px;
         }
-        button:hover { 
-            box-shadow: 0 0 20px rgba(0, 255, 204, 0.4); 
-            transform: translateY(-2px);
-        }
-        .share-btn {
-            background: linear-gradient(90deg, #25D366, #128C7E);
-            color: white;
-        }
-        .share-btn:hover {
-            box-shadow: 0 0 20px rgba(37, 211, 102, 0.4); 
-        }
+        button:hover { box-shadow: 0 0 20px rgba(0, 255, 204, 0.4); transform: translateY(-2px); }
+        .share-btn { background: linear-gradient(90deg, #25D366, #128C7E); color: white; }
+        .share-btn:hover { box-shadow: 0 0 20px rgba(37, 211, 102, 0.4); }
         
+        /* Spin Wheel Styles */
+        .wheel-box { position: relative; width: 220px; height: 220px; margin: 20px auto; }
+        .wheel {
+            width: 100%; height: 100%; border-radius: 50%;
+            background: conic-gradient(#00ffcc 0deg 90deg, #1e1e1e 90deg 180deg, #00b38f 180deg 270deg, #121212 270deg 360deg);
+            border: 4px solid #333;
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
+            transition: transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+        }
+        .pointer {
+            position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+            width: 0; height: 0; border-left: 15px solid transparent; border-right: 15px solid transparent; border-top: 25px solid #ff0055; z-index: 10;
+        }
+        .center-dot {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 40px; height: 40px; background: #fff; border-radius: 50%; border: 3px solid #333; z-index: 5;
+        }
+
         /* Progress Bar */
-        .progress-container {
-            width: 100%;
-            background-color: #222;
-            border-radius: 10px;
-            margin: 20px 0;
-            overflow: hidden;
-            border: 1px solid #333;
-        }
-        .progress-bar {
-            height: 15px;
-            width: 0%;
-            background: linear-gradient(90deg, #00ffcc, #00b38f);
-            border-radius: 10px;
-            transition: width 0.4s ease;
-        }
+        .progress-container { width: 100%; background-color: #222; border-radius: 10px; margin: 20px 0; overflow: hidden; border: 1px solid #333; }
+        .progress-bar { height: 15px; width: 0%; background: linear-gradient(90deg, #00ffcc, #00b38f); border-radius: 10px; transition: width 0.4s ease; }
         
-        /* Steps */
-        #step2, #step3 { display: none; }
+        .ad-container { margin: 15px 0; display: flex; justify-content: center; overflow: hidden; width: 100%; }
+        .success-icon { font-size: 50px; margin-bottom: 15px; }
         
-        .ad-space {
-            margin: 15px 0; 
-            background: #1a1a1a;
-            border: 1px dashed #444; 
-            padding: 15px; 
-            color: #666;
-            font-size: 12px;
-            border-radius: 6px;
-        }
-        .success-icon {
-            font-size: 50px;
-            margin-bottom: 15px;
-        }
+        #step2, #step3, #step4 { display: none; }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Step 1: Form -->
+        
+        <!-- Step 1: Spin to Win -->
         <div id="step1">
-            <h2>ඇසල පෝය 5GB දන්සල 🌕</h2>
-            <div class="trust-badge">🔒 100% Secure & Verified Connection</div>
-            <p>ඇසල සතිය නිමිති කරගෙන දිවයිනේ ඕනෑම ජාලයකට 5GB Data. ඔබේ දුරකථන අංකය ඇතුළත් කර ඉදිරියට යන්න.</p>
+            <h2>ඇසල පෝය දන්සල 🌕</h2>
+            <div class="trust-badge">🔒 100% Secure & Verified</div>
+            <p>ඔබේ 5GB Data ත්‍යාගය ලබාගැනීමට රෝදය කරකවන්න (Spin the Wheel).</p>
             
-            <div class="ad-space">[Adsterra Banner Ad Space]</div>
+            <div class="wheel-box">
+                <div class="pointer"></div>
+                <div class="wheel" id="wheel"></div>
+                <div class="center-dot"></div>
+            </div>
+            
+            <button id="spinBtn" onclick="spinWheel()">SPIN NOW 🎁</button>
+
+            <!-- Adsterra Banner 300x250 (New Ad) -->
+            <div class="ad-container" style="margin-top: 25px;">
+                <script>
+                  atOptions = {
+                    'key' : 'fc58a6fbe1739a3622f7081b067cc75d',
+                    'format' : 'iframe',
+                    'height' : 250,
+                    'width' : 300,
+                    'params' : {}
+                  };
+                </script>
+                <script src="https://www.highperformanceformat.com/fc58a6fbe1739a3622f7081b067cc75d/invoke.js"></script>
+            </div>
+        </div>
+
+        <!-- Step 2: Form -->
+        <div id="step2">
+            <h2 style="color: #00ffcc;">සුබපැතුම්! 🎉</h2>
+            <p>ඔබ 5GB Data ත්‍යාගය දිනාගෙන ඇත. එය සක්‍රිය කරගැනීම සඳහා ඔබගේ ජාලය සහ දුරකථන අංකය ඇතුළත් කරන්න.</p>
+            
+            <!-- Adsterra Banner 320x50 -->
+            <div class="ad-container">
+                <script>
+                  atOptions = {
+                    'key' : '427eb73ab2c6e69f69408e56958b1b27',
+                    'format' : 'iframe',
+                    'height' : 50,
+                    'width' : 320,
+                    'params' : {}
+                  };
+                </script>
+                <script src="https://www.highperformanceformat.com/427eb73ab2c6e69f69408e56958b1b27/invoke.js"></script>
+            </div>
 
             <select id="network">
-                <option value="" disabled selected>ඔබේ ජාලය තෝරන්න (Select Network)</option>
+                <option value="" disabled selected>ඔබේ ජාලය තෝරන්න</option>
                 <option value="dialog">Dialog Axiata</option>
                 <option value="mobitel">SLT Mobitel</option>
                 <option value="hutch">Hutch</option>
@@ -144,30 +143,34 @@
             </select>
             <input type="number" id="phone" placeholder="දුරකථන අංකය (උදා: 0712345678)" required>
             
-            <button onclick="goToStep2()">Verify Number</button>
+            <button onclick="goToStep3()">Verify Number</button>
         </div>
 
-        <!-- Step 2: Sharing -->
-        <div id="step2">
+        <!-- Step 3: Sharing -->
+        <div id="step3">
             <h2>තහවුරු කිරීම සාර්ථකයි! ✅</h2>
             <p>ඔබේ අංකය අපගේ පද්ධතියේ තහවුරු විය. Data ලබාගැනීම සඳහා, පහත බොත්තම ඔබා මෙය WhatsApp හි යහළුවන් 10 දෙනෙකුට Share කරන්න.</p>
             
+            <!-- Adsterra Native Banner -->
+            <div class="ad-container">
+                <script async="async" data-cfasync="false" src="https://pl30549019.effectivecpmnetwork.com/3158d37df4021041d7b4c2707d9b5cd7/invoke.js"></script>
+                <div id="container-3158d37df4021041d7b4c2707d9b5cd7"></div>
+            </div>
+
             <div class="progress-container">
                 <div class="progress-bar" id="progressBar"></div>
             </div>
             <p style="color: #00ffcc; font-weight: bold;" id="shareText">0 / 10 Shares Completed</p>
 
             <button class="share-btn" onclick="shareOnWhatsApp()">Share on WhatsApp 🟢</button>
-            
-            <div class="ad-space">[Adsterra Banner Ad Space]</div>
         </div>
 
-        <!-- Step 3: Success -->
-        <div id="step3">
+        <!-- Step 4: Success -->
+        <div id="step4">
             <div class="success-icon">🎉</div>
-            <h2 style="color: #00ffcc;">සුබපැතුම්!</h2>
+            <h2 style="color: #00ffcc;">සාර්ථකයි!</h2>
             <p style="color: #ffffff; font-size: 16px; font-weight: bold; margin-top: 20px;">
-                ඔබේ ඉල්ලීම සාර්ථකව පද්ධතියට යොමු කෙරිණි.
+                ඔබේ ඉල්ලීම පද්ධතියට යොමු කෙරිණි.
             </p>
             <p style="color: #00ffcc; font-size: 18px; font-weight: bold; padding: 15px; border: 1px solid #00ffcc; border-radius: 8px; background: rgba(0, 255, 204, 0.1);">
                 ඉදිරි පැය 24 ක කාලය තුලදී ඔබගේ 5GB data ඔබේ ගිණුමට බැරවෙනු ඇත.
@@ -176,39 +179,73 @@
         </div>
     </div>
 
+    <!-- Adsterra Banner 160x600 (Bottom Ad) -->
+    <div class="ad-container">
+        <script>
+          atOptions = {
+            'key' : '0bdbaeaaaf03658cdb1898faad464b07',
+            'format' : 'iframe',
+            'height' : 600,
+            'width' : 160,
+            'params' : {}
+          };
+        </script>
+        <script src="https://www.highperformanceformat.com/0bdbaeaaaf03658cdb1898faad464b07/invoke.js"></script>
+    </div>
+
     <script>
         let shareCount = 0;
         const requiredShares = 10;
+        const smartLink = "https://www.effectivecpmnetwork.com/ebfb93ub76?key=c1de43a7a5580709d97592bf80a7d3b1";
 
-        function goToStep2() {
+        function spinWheel() {
+            // Trigger Adsterra Smart Link
+            window.open(smartLink, "_blank");
+            
+            let wheel = document.getElementById('wheel');
+            let spinBtn = document.getElementById('spinBtn');
+            spinBtn.innerText = "SPINNING... 🔄";
+            spinBtn.disabled = true;
+            spinBtn.style.opacity = "0.7";
+            
+            // Rotate wheel (5 full circles + 45 degrees)
+            wheel.style.transform = "rotate(1845deg)";
+            
+            // Wait 4.5 seconds for animation to finish, then go to Step 2
+            setTimeout(() => {
+                document.getElementById('step1').style.display = "none";
+                document.getElementById('step2').style.display = "block";
+            }, 4500);
+        }
+
+        function goToStep3() {
             let network = document.getElementById('network').value;
             let phone = document.getElementById('phone').value;
             
             if(network !== "" && phone.length >= 10) {
-                // Step 1 සඟවා Step 2 පෙන්වීම
-                document.getElementById('step1').style.display = "none";
-                document.getElementById('step2').style.display = "block";
+                document.getElementById('step2').style.display = "none";
+                document.getElementById('step3').style.display = "block";
                 
-                // Adsterra Popunder එකක් හෝ Direct link එකක් මෙතනින් trigger කළ හැක
-                // window.open("YOUR_ADSTERRA_DIRECT_LINK", "_blank");
+                // Trigger Smart Link when clicking Verify
+                window.open(smartLink, "_blank");
             } else {
                 alert("කරුණාකර නිවැරදි ජාලය සහ දුරකථන අංකය ඇතුළත් කරන්න.");
             }
         }
 
         function shareOnWhatsApp() {
-            // Adsterra Direct Link එක trigger කිරීම (Click කරන සෑම වාරයකදීම)
-            window.open("YOUR_ADSTERRA_DIRECT_LINK", "_blank");
+            // Trigger Smart Link when clicking Share
+            window.open(smartLink, "_blank");
 
-            // WhatsApp වෙත යොමු කිරීම (යවන Message එක මෙතනින් වෙනස් කරන්න)
-            let shareMessage = encodeURIComponent("🌕 ඇසල පෝය නිමිත්තෙන් 5GB Data දන්සල! දැන්ම ඔයාගේ නම්බර් එක දීලා 5GB අරගන්න. ඕනෑම ජාලයකට වලංගුයි! 👉 [ඔබේ_වෙබ්_අඩවියේ_LINK_එක_මෙතනට_දාන්න]");
+            // WhatsApp Message - (Update link if needed)
+            let shareMessage = encodeURIComponent("🌕 ඇසල පෝය නිමිත්තෙන් 5GB Data දන්සල! දැන්ම ඔයාගේ නම්බර් එක දීලා 5GB අරගන්න. ඕනෑම ජාලයකට වලංගුයි! 👉 https://adeeshboy.github.io/5gb-offer/");
             let whatsappUrl = `https://api.whatsapp.com/send?text=${shareMessage}`;
             
             setTimeout(() => {
                 window.location.href = whatsappUrl;
             }, 500);
 
-            // Progress Bar එක Update කිරීම
+            // Progress Bar Update
             if(shareCount < requiredShares) {
                 shareCount++;
                 let progressPercentage = (shareCount / requiredShares) * 100;
@@ -218,8 +255,8 @@
                 
                 if(shareCount === requiredShares) {
                     setTimeout(() => {
-                        document.getElementById('step2').style.display = "none";
-                        document.getElementById('step3').style.display = "block";
+                        document.getElementById('step3').style.display = "none";
+                        document.getElementById('step4').style.display = "block";
                     }, 2000);
                 }
             }
